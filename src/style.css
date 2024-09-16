@@ -1,0 +1,14 @@
+.buttons {
+    margin: 20px;
+    padding: 10px;
+}
+
+.month {
+    border: 5px;
+    border-radius: 10px;
+    border-color: white;
+    background-color: rgb(0, 71, 147);
+    width: 85%;
+    height: 500px;
+    color: white;
+}
