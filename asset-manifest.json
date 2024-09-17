@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/MoneyMap/static/css/main.41fa8f02.css",
+    "main.js": "/MoneyMap/static/js/main.e47c7397.js",
+    "static/js/453.adc34eb4.chunk.js": "/MoneyMap/static/js/453.adc34eb4.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/MoneyMap/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/MoneyMap/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "index.html": "/MoneyMap/index.html",
+    "main.41fa8f02.css.map": "/MoneyMap/static/css/main.41fa8f02.css.map",
+    "main.e47c7397.js.map": "/MoneyMap/static/js/main.e47c7397.js.map",
+    "453.adc34eb4.chunk.js.map": "/MoneyMap/static/js/453.adc34eb4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41fa8f02.css",
+    "static/js/main.e47c7397.js"
+  ]
+}
