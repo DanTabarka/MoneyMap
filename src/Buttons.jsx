@@ -1,34 +1,46 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './style.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
-function Buttons( {setMonths, months} ) {
+function Buttons( { setMonths, months } ) {
     const [year, setYear] = useState(2024);
     const [month, setMonth] = useState(1);
 
-    function addMonth() {
-        let newMonths = [...months, getMonthToAdd()];
-        let sortedMonths = newMonths.sort();
+    function addMonth(y, m) {
+        if (y > 2025 || y < 1900 || m > 12 || m < 1) {
+            return;
+        }
+        let newMonths = [...months, getMonthToAdd(y, m)];
+        let sortedMonths = newMonths.sort((a, b) => {
+            return a.date.localeCompare(b.date)});
         setMonths(sortedMonths);
     }
-
-    function getMonthToAdd() {
-        return `${year}/${month}`;
+    
+    function getMonthToAdd(y, m) {
+        return {
+            date: `${y}/${m}`,
+            incomes: [],
+            expenses: []
+          };
     }
+
+    const handleClick = () => {
+        const userYear = prompt("Zadejte rok");
+        const userMonth = prompt("Zadejte měsíc");
+    
+        if (userYear !== null && userMonth !== null) { // Ujistí se, že uživatel nezrušil dialog
+            setYear(userYear);
+            setMonth(userMonth);
+            addMonth(userYear, userMonth);
+        }
+      };
+
 
     return (
         <div className='buttons'>
-            <button className='btn btn-success btn-lg' onClick={addMonth}><i class="bi bi-plus-square"></i> Add month</button>
-            <label>
-                Year
-                <input type='number' value={year} onChange={(e) => setYear(e.target.value)} />
-            </label>
-            <label>
-                Month
-                <input type='number' value={month} onChange={(e) => setMonth(e.target.value)} />
-            </label>
+            <button className='add' onClick={handleClick}><i className="bi bi-plus-square"></i> Add month</button>
         </div>
     )
 }
